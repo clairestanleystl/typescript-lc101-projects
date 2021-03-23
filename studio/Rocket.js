@@ -3,6 +3,8 @@ exports.__esModule = true;
 exports.Rocket = void 0;
 var Rocket = /** @class */ (function () {
     function Rocket(name, totalCapacityKg) {
+        this.cargoItems = [];
+        this.astronauts = [];
         this.name = name;
         this.totalCapacityKg = totalCapacityKg;
     }
@@ -11,12 +13,10 @@ var Rocket = /** @class */ (function () {
         for (var i = 0; i < items.length; i++) {
             sum += items[i].massKg;
         }
-        console.log(sum);
         return sum;
     };
     Rocket.prototype.currentMassKg = function () {
         var mass = this.sumMass(this.astronauts) + this.sumMass(this.cargoItems);
-        console.log(mass);
         return mass;
     };
     Rocket.prototype.canAdd = function (item) {
